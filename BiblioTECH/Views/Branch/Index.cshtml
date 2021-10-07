@@ -1,0 +1,100 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TechData.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@model BiblioTECH.Models.Branch.BranchIndexModel
+@{
+    ViewBag.Title = "Branch Index";
+}
+@*<h3>Branch Index</h3>
+    <div id="branchIndex">
+        <div>
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+            {
+                <a asp-controller="Branch" asp-action="Add">Adaugare</a>
+            }
+        </div>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp customTable" id="branchIndexTable">
+            <thead>
+                <tr>
+                    <th>Branch Name</th>
+                    <th>Open Now</th>
+                    <th>Number Of Assets</th>
+                    <th>Number of Patrons</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var branch in Model.Branches)
+                {
+                    <tr>
+                        <td class="strongTd"><a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">@branch.BranchName</a></td>
+                        <td>@branch.IsOpen</td>
+                        <td>@branch.NumberOfAssets</td>
+                        <td>@branch.NumberOfPatrons</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>*@
+
+<section class="container-fluid px-0">
+    @{
+        if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+        {
+            <div class="text-center mt-5">
+                <a class="btn btn-lg btn-warning" role="button" asp-controller="Branch" asp-action="Add">ADAUGĂ O NOUĂ CLĂDIRE</a>
+            </div>
+        }
+
+        int counter = 1;
+        @foreach (var branch in Model.Branches)
+        {
+            <div class="row align-items-center content">
+                @if (counter % 2 == 0)
+                {
+                    <div class="col-md-6 order-2 order-md-1">
+                        <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">
+                            <img src="@branch.ImageUrl" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-6 text-center order-1 order-md-2">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                                <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id" class="remove-underline-link">
+                                    <h2>@branch.BranchName</h2>
+                                </a>
+                                <img src="" alt="" class="d-none d-lg-inline">
+                                <p class="lead">
+                                    @branch.Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col-md-6 order-1 order-md-2">
+                        <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id">
+                            <img src="@branch.ImageUrl" alt="" class="img-fluid">
+                        </a>
+                    </div>
+                    <div class="col-md-6 text-center order-2 order-md-1">
+                        <div class="row justify-content-center">
+                            <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                                <a asp-controller="Branch" asp-action="Detail" asp-route-id="@branch.Id" class="remove-underline-link">
+                                    <h2>@branch.BranchName</h2>
+
+                                </a>
+                                <img src="" alt="" class="d-none d-lg-inline">
+                                <p class="lead">
+                                    @branch.Description
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                }
+
+            </div>
+            counter = counter + 1;
+        }
+    }
+</section>

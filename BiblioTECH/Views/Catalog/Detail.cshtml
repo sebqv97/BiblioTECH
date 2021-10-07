@@ -1,0 +1,257 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TechData.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@model BiblioTECH.Models.Catalog.AssetDetailModel
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+<!-- Modal Checkout -->
+<div class="modal fade" id="CheckoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Împrumută</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Doresti sa împrumuți acest obiect?</p>
+                <p class="text-danger">Nereturnarea la timp va duce la taxare!</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ÎNCHIDE</button>
+                <form asp-controller="Catalog" asp-action="PlaceCheckout" asp-route-assetId="@Model.AssetId" method="post">
+                    <button type="submit" class="btn btn-primary">Împrumută</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Modal HOLD -->
+<div class="modal fade" id="HoldModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Rezervare</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Doresti sa rezervi acest obiect?</p>
+                <p class="text-danger">În momentul returnării de către posesorul curent, vi-l vom atribui <span class="text-info">AUTOMAT</span> dumneavoastră</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ÎNCHIDE</button>
+                <form asp-controller="Catalog" asp-action="PlaceHold" asp-route-assetId="@Model.AssetId" method="post">
+                    <button type="submit" class="btn btn-warning">REZERVĂ</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal CancelHOLD -->
+<div class="modal fade" id="CancelHoldModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Anulează rezervarea</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <p>Sunteți sigur că doriți să anulezi rezervarea?</p>
+                <p class="text-info">Apăsând butonul veți ieși din așteptare...</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">ÎNCHIDE</button>
+                <form asp-controller="Catalog" asp-action="PlaceCancelHold" asp-route-assetId="@Model.AssetId" method="post">
+                    <button type="submit" class="btn btn-warning">Renunță</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-light container-margin-adjustment pt-3">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <img class="detailImage" src="@Model.ImageUrl" />
+                </div>
+            </div>
+            <div class="col-md-4">
+                <p id="itemTitle">@Model.Title</p>
+                <p id="itemAuthor">@Model.AuthorOrDirector</p>
+                <p id="itemStatus">@Model.Status</p>
+                @if (Model.Type == "Book")
+                {
+                    <p>Carte</p>
+                }
+
+                <p id="itemLocation">Locație: @Model.CurrentLocation</p>
+                @if (Model.Status == "Împrumutat")
+                {
+                    <p id="itemPatron">Împrumutat de: @Model.PatronName</p>
+                }
+
+
+                @if (@Model.Status != "Pierdut")
+                {
+
+                    @if (@Model.Status == "Valabil" && SignInManager.IsSignedIn(User) && User.IsInRole("User") && !User.IsInRole("Admin"))
+                    {
+                        if (Model.UserFees == 0)
+                        {
+                            <p><a class="btn btn-lg btn-info" role="button" data-toggle="modal" data-target="#CheckoutModal">Împrumută</a></p>
+                        }
+                        else
+                        {
+                            <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Achită suma de @Model.UserFees Lei pentru a putea continua">
+                                <button class="btn btn-primary" style="pointer-events: none;" type="button" disabled>Împrumută</button>
+                            </span>
+                        }
+                    }
+
+                    @if (@Model.Status == "Împrumutat" && SignInManager.IsSignedIn(User) && User.IsInRole("User"))
+                    {
+                        @if (Model.CheckedOutByMe == true)
+                        {
+                            <p><a class="btn btn-lg btn-success" title="Plateste" role="button" asp-controller="Catalog" asp-action="CheckIn" asp-route-id="@Model.AssetId">Înapoiază</a></p>
+                        }
+                        else
+                        {
+                            @if (Model.HoldedByMe == false)
+                            {
+                                if (Model.UserFees == 0)
+                                {
+
+                                    <p><a class="btn btn-lg btn-warning" role="button" data-target="#HoldModal" data-toggle="modal">Rezervă</a></p>
+                                }
+                                else
+                                {
+                                    <span class="d-inline-block" tabindex="0" data-toggle="tooltip" title="Achită suma de @Model.UserFees Lei pentru a putea continua">
+                                        <button class="btn btn-warning" style="pointer-events: none;" type="button" disabled>Rezervă</button>
+                                    </span>
+                                }
+                            }
+                            else
+                            {
+                                <p><a class="btn btn-lg btn-outline-warning" role="button" data-toggle="modal" data-target="#CancelHoldModal">Șterge Rezervarea</a></p>
+                            }
+
+                        }
+                    }
+
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        <div class="adminButtonsLost pt-5 pl-5">
+                            <a class="btn btn-lg btn-danger" role="button" asp-controller="Catalog" asp-action="MarkLost" asp-route-id="@Model.AssetId">PIERDUT</a>
+                            <a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Edit" asp-route-id="@Model.AssetId">Editati Obiectul</a>
+                            <a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="PlaceDelete" asp-route-id="@Model.AssetId">Stergeti Obiectul</a>
+                        </div>
+                    }
+                }
+
+                else
+                {
+                    <p>Acest obiect este momentan declarat PIERDUT</p>
+                    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+                    {
+                        <div class="adminButtonsFound">
+                            <a class="btn btn-lg btn-success" role="button" asp-controller="Catalog" asp-action="MarkFound" asp-route-id="@Model.AssetId">GĂSIT </a>
+                            <a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Edit" asp-route-id="@Model.AssetId">Editati Obiectul</a>
+                            <a class="btn btn-lg btn-info" role="button" asp-controller="Catalog" asp-action="Delete" asp-route-id="@Model.AssetId">Stergeti Obiectul</a>
+                        </div>
+                    }
+                }
+
+            </div>
+            <div class="col-md-4 detailInfo" style="height:50%">
+                <table>
+                    <tr>
+                        <td class="itemLabel">Număr internațional: </td>
+                        <td class="itemValue"> @Model.Isbn</td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Index Dewey: </td>
+                        <td class="itemValue">@Model.Dewey</td>
+                    </tr>
+                    <tr>
+                        <td class="itemLabel">Taxă ce acoperă pierderea: </td>
+                        <td class="itemValue">@Model.Cost Lei</td>
+                    </tr>
+                </table>
+            </div>
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-6">
+            <h4>Istoric Împrumuturi</h4>
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>Din</th>
+                        <th>Până în</th>
+                        <th>Id card</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var checkout in @Model.CheckoutHistory)
+                    {
+                        <tr>
+                            <td>
+                                @checkout.CheckedOut
+                            </td>
+                            <td>
+                                @checkout.CheckedIn
+                            </td>
+                            <td>
+                                @checkout.LibraryCard.Id
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="col-lg-6">
+            <h4>Rezervări</h4>
+            <table class="table table-bordered table-hover table-condensed">
+                <thead>
+                    <tr>
+                        <th>Data rezervării</th>
+                        <th>Utilizatorul</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var hold in @Model.CurrentHolds)
+                    {
+                        <tr>
+                            <td>
+                                @hold.HoldPlaced
+                            </td>
+                            <td>
+                                @hold.PatronName
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+

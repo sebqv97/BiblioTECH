@@ -1,0 +1,153 @@
+﻿<!DOCTYPE html>
+@using Microsoft.AspNetCore.Identity
+@using TechData.Models
+@inject SignInManager<ApplicationUser> SignInManager
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - BiblioTECH, un loc, o poveste</title>
+
+
+    <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/lib/FontAwesome 5.13.0/css/all.min.css" rel="stylesheet" />
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,300,400,700" rel="stylesheet">
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="~/css/app.css" asp-append-version="true" />
+    <script src="~/js/site.js"></script>
+</head>
+
+<body>
+
+    @*<nav id="mainNavbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" asp-controller="Home" asp-action="Index">BIBLIOTECH</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Catalog" asp-action="Index">Catalog</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-controller="Branch" asp-action="Index">Locații</a>
+                        </li>
+                    </ul>
+
+                    <div class="navbar-nav ml-auto">
+
+                        @if (SignInManager.IsSignedIn(User))
+                        {
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <a class="nav-item nav-link" asp-controller="Patron" asp-action="Index">Utilizatori</a>
+                                <a class="nav-item nav-link" asp-controller="Administration" asp-action="ListRoles">Administreaza roluri</a>
+                            }
+
+                            <form method="post" asp-controller="Account" asp-action="logout">
+                                <button type="submit" style="width:auto" class="nav-item nav-link btn btn-link py-0" id="logout">
+                                    Logout
+                                </button>
+                            </form>
+
+
+
+                        }
+                        else
+                        {
+
+
+                            <a class="nav-item nav-link" asp-controller="Account" asp-action="register">Inregistrare</a>
+
+
+                            <a class="nav-item nav-link" asp-controller="Account" asp-action="login">Conectare</a>
+
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </nav>*@
+
+
+    <nav id="mainNavbar" class="navbar navbar-dark navbar-expand-lg py-0 fixed-top">
+        <a href="#" class="navbar-brand">BilioTECH</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navLinks" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navLinks">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a asp-controller="Home" asp-action="Index" class="nav-link">ACASĂ</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Catalog" asp-action="Index" class="nav-link">CATALOG</a>
+                </li>
+                <li class="nav-item">
+                    <a asp-controller="Branch" asp-action="Index" class="nav-link">LOCAȚII</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+
+                @if (SignInManager.IsSignedIn(User))
+                {
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li class="nav-item shadowed-buttons">
+                            <a class="nav-link" asp-controller="Patron" asp-action="Index">UTILIZATORI</a>
+                        </li>
+
+                        <li class="nav-item shadowed-buttons">
+                            <a class="nav-link" asp-controller="Administration" asp-action="ListRoles">ROLURI</a>
+                        </li>
+                    }
+
+                    else
+                    {
+                        <li class="nav-item shadowed-buttons">
+                            <a class="nav-link" asp-controller="Account" asp-action="ViewAccount">CONTUL MEU</a>
+
+                        </li>
+                    }
+                    <li class="nav-item shadowed-buttons">
+                        <a class="nav-link" asp-controller="Account" asp-action="Logout">DECONECTARE</a>
+
+                    </li>
+
+
+
+                }
+                else
+                {
+                    <li class="nav-item shadowed-buttons">
+                        <a class="nav-item nav-link" asp-controller="Account" asp-action="register">ÎNREGISTRARE</a>
+
+                    </li>
+                    <li class="nav-item shadowed-buttons">
+                        <a class="nav-item nav-link" asp-controller="Account" asp-action="login">CONECTARE</a>
+                    </li>
+                }
+            </ul>
+        </div>
+    </nav>
+
+    <div class="page-content">
+        @RenderBody()
+    </div>
+
+
+    @RenderSection("Styles", required: false)
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

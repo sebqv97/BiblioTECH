@@ -1,0 +1,64 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TechData.Models
+@inject SignInManager<ApplicationUser> SignInManager
+@model BiblioTECH.Models.Catalog.AssetIndexModel
+@{
+    ViewBag.Title = "Library Catalog Index";
+
+}
+
+
+<div class="container bg-light " id="assets">
+    <h3 class="display-4 text-center"> Vizualizează Catalog</h3>
+    <hr />
+    @if (SignInManager.IsSignedIn(User) && User.IsInRole("Admin"))
+    {
+        <div class="text-center">
+            <a class="btn btn-lg btn-warning" role="button" asp-controller="Catalog" asp-action="Add">ADAUGĂ ÎN BIBLIOTECĂ</a>
+        </div>
+    }
+
+    <table class="table table-striped" id="catalogIndexTable">
+        <thead>
+            <tr>
+                <th>Copertă</th>
+                <th>Titlu</th>
+                <th>Autor</th>
+                <th>Locație</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var asset in @Model.Assets)
+            {
+                <tr class="assetRow">
+                    <td class="">
+                        <div>
+                            <a asp-controller="Catalog" asp-action="Detail" asp-route-id="@asset.Id">
+                                <img src="@asset.ImageUrl" class="image-catalog-index" />
+                            </a>
+                        </div>
+                    </td>
+                    <td class="">@asset.Title</td>
+                    <td class="">@asset.AuthorOrDirector</td>
+                    <td class="">@asset.LocationName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+</div>
+@section Styles {
+    <link href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+}
+@section Scripts {
+    <script type="text/javascript" src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
+
+    <script>
+        $(document).ready(function () {
+            $('#catalogIndexTable').DataTable();
+        });</script>
+}
+

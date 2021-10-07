@@ -1,0 +1,9 @@
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Release\netstandard2.1\TechData.deps.json
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Release\netstandard2.1\TechData.dll
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Release\netstandard2.1\TechData.pdb
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Release\netstandard2.1\TechData.csprojAssemblyReference.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Release\netstandard2.1\TechData.csproj.CoreCompileInputs.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Release\netstandard2.1\TechData.AssemblyInfoInputs.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Release\netstandard2.1\TechData.AssemblyInfo.cs
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Release\netstandard2.1\TechData.dll
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Release\netstandard2.1\TechData.pdb

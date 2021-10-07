@@ -1,0 +1,105 @@
+﻿@model BiblioTECH.Models.LibraryAssetModel.AddLibraryAssetModel
+@{
+    ViewBag.Title = "Adaugare";
+}
+
+
+
+<div class="container container-margin-adjustment">
+    <div class="jumbotron">
+        <form enctype="multipart/form-data" asp-controller="Catalog" asp-action="PlaceAdd" method="post">
+            <div class="form-row">
+                <div class=" col-md-4">
+                </div>
+
+                <div class="form-group col-md-4">
+                    <input asp-for="Title" class="form-control" placeholder="Titlu">
+                    <span asp-validation-for="Title" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(a => a.Category)
+                    @Html.DropDownListFor(model => model.Category,
+            new List<SelectListItem> {
+                new SelectListItem { Value = "" , Text = "..." },
+                 new SelectListItem { Value = "1" , Text = "Carte" },
+                 new SelectListItem { Value = "2" , Text = "Video" },
+                 new SelectListItem { Value = "3" , Text = "Revista" },
+                 new SelectListItem { Value = "4" , Text = "Ziar" }
+              },
+            new { @class = "form-control" })
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    @Html.LabelFor(a => a.Location)
+                    <select asp-for="Location" asp-items="@((List<SelectListItem>)ViewData["BranchesNames"])" class="form-control">
+                        <option value="">Pick one</option>
+                    </select>
+                    <span asp-validation-for="Location" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-row">
+
+                <div class="form-group col-md-6">
+                    <input asp-for="Year" class="form-control" placeholder="An">
+                    <span asp-validation-for="Year" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-6">
+                    <input asp-for="Cost" class="form-control" placeholder="Cost">
+                    <span asp-validation-for="Cost" class="text-danger"></span>
+                </div>
+
+            </div>
+            <div class="form-row">
+
+
+
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(a => a.Image)
+                <input asp-for="Image" class="form-control-file" />
+                <span asp-validation-for="Image" class="text-danger"></span>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input asp-for="ISBN" class="form-control" placeholder="Numar International">
+                    <span asp-validation-for="ISBN" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <input asp-for="Author" class="form-control" placeholder="Author">
+                    <span asp-validation-for="Author" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-4">
+                    <input asp-for="DeweyIndex" class="form-control" placeholder="Index Dewey">
+                    <span asp-validation-for="DeweyIndex" class="text-danger"></span>
+
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+
+
+                </div>
+                <div class="form-group col-md-4">
+                    <input asp-for="Director" class="form-control" placeholder="Director Video">
+                    <span asp-validation-for="Director" class="text-danger"></span>
+
+                </div>
+                <div class="form-group col-md-4">
+
+
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success btn-lg">Adăugați</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+

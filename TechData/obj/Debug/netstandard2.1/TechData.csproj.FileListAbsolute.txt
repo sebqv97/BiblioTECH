@@ -1,0 +1,27 @@
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Debug\netstandard2.1\TechData.deps.json
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Debug\netstandard2.1\TechData.dll
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.1\TechData.csprojAssemblyReference.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.1\TechData.AssemblyInfoInputs.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.1\TechData.AssemblyInfo.cs
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Debug\netstandard2.1\TechData.pdb
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.1\TechData.csproj.CoreCompileInputs.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.1\TechData.dll
+D:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.1\TechData.pdb
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\bin\Debug\netstandard2.1\TechData.deps.json
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\bin\Debug\netstandard2.1\TechData.dll
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\bin\Debug\netstandard2.1\TechData.pdb
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.csprojAssemblyReference.cache
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.AssemblyInfoInputs.cache
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.AssemblyInfo.cs
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.csproj.CoreCompileInputs.cache
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.dll
+d:\Anul 4-IS-semestrul 2\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.pdb
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\bin\Debug\netstandard2.1\TechData.deps.json
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\bin\Debug\netstandard2.1\TechData.dll
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\bin\Debug\netstandard2.1\TechData.pdb
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.csprojAssemblyReference.cache
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.AssemblyInfoInputs.cache
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.AssemblyInfo.cs
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.csproj.CoreCompileInputs.cache
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.dll
+d:\Licenta\Sistem pentru administrarea bibliotecilor\TechData\obj\Debug\netstandard2.1\TechData.pdb

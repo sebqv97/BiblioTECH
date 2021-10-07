@@ -1,0 +1,390 @@
+﻿
+*{
+    margin:0;
+    padding: 0;
+}
+
+html {
+    height: 100%;
+}
+
+
+body,.page-content {
+    height: 100%;
+}
+
+/*-------------------NavBar-----------------------*/
+#mainNavbar {
+    font-size: 1rem;
+    font-weight: 100;
+    
+}
+
+#mainNavbar a {
+    color:white;
+}
+
+#headingGroup span {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    color: black;
+    font-weight: 100;
+    font-size: 4rem;
+}
+.logo {
+    font-family: "Coda";
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.logo > a {
+    color: #ddd; 
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.logo > a:hover{
+    color: #fff; 
+    transition: ease;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.page-content{
+    padding: 20px;
+    margin: 10px 150px;
+}
+
+.page-heading{
+    color: #e9e8e7;
+}
+
+.splash{
+    background-image: url("/images/catalog.png");
+    background-repeat: no-repeat;
+    min-height: 200px;
+}
+
+.card-icon{
+    color: #777;
+    font-size: 40px;
+    padding: 24px;
+    -webkit-border-radius: 1100%;
+    -moz-border-radius: 100%;
+    border-radius: 100%;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+    vertical-align: middle;
+    width: 60px;
+    height: 60px;
+    -moz-transition: .5s;
+    -webkit-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.icon-wrapper {
+    display: table-cell;
+}
+
+.demo-card-square.mdl-card {
+    width: 320px;
+    height: 320px;
+}
+
+.demo-card-square > .mdl-card__title {
+    color: #fff;
+}
+
+.homeLabel{
+    background-color: rgba(0,0,0,0.3);
+    padding: 4px;
+}
+
+#catalog {
+    background: url('/images/books.jpg') bottom right 15% no-repeat #555;
+}
+
+#catalogIndexTable {
+    font-size: 1.3em;
+}
+
+#catalogIndexTable td{
+    vertical-align:middle;
+}
+
+#catalogIndexTable tr:hover{
+    background-color: #eee;
+}
+
+#patrons{
+    background: url('/images/patron.jpeg') bottom left 15% no-repeat #555;
+}
+
+.branchInfo{
+    padding-top: 30px;
+}
+
+#branches{
+    background: url('/images/bldg.jpeg') bottom right 15% no-repeat #555;
+}
+
+#assets{
+    margin: 0 auto;
+}
+
+.customTable td {
+    text-align: left;
+    font-size: 1.2em;
+}
+
+.strongTd{
+    font-weight: bold;
+}
+
+.customTable th {
+    text-align: left;
+    color: black;
+    font-size: 1.3em;
+}
+
+.imageCell {
+    width: 128px;
+    padding: 10px;
+}
+
+#assetsTable td{
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+.authorLabel{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+.titleLabel{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#itemTitle{
+    font-size: 2.3em;
+}
+
+#itemAuthor{
+    font-size: 1.6em;
+}
+
+#itemStatus{
+    font-weight: bold;
+    font-size: 1.3em;
+}
+
+#itemType{
+    font-size: 1.6em;
+    color: #888;
+}
+
+.itemLabel{
+    font-weight:bold;
+}
+
+
+.itemValue{
+    text-align:right;
+    font-size: 0.8em;
+}
+
+.availability{
+    padding-top: 20px;
+    font-size: 1.2em;
+}
+
+.detailImage{
+    width: 300px;
+    padding-bottom: 6px;
+}
+
+.detailInfo{
+    padding: 10px;
+    font-size: 1.3em;
+    color: #555;
+}
+
+.detailHeading{
+    padding: 10px;
+}
+
+#branchDescription{
+    width: 500px;
+    padding: 18px 0 12px 4px;
+}
+
+.branchContact{
+    padding: 12px 0 16px 0;
+    font-size: 1.2em;
+}
+
+#patronHasFees{
+    color: #c62222;
+    font-weight: bold;
+}
+
+#patronNoFees{
+    color: #2f6fc7;
+    font-weight: bold;
+}
+
+
+
+/* ------------ANDREI EDIT----------------- */
+
+.adminButtonsFound, .adminButtonsLost{
+    display: flex;
+    width: 155%;
+}
+
+.adminButtonsFound a, .adminButtonsLost a{
+    margin-left: 10px;
+}
+
+.adminButtonsFound a:first-child, .adminButtonsLost a:first-child{
+    margin-left: 0;
+}
+
+.dataTables_length{
+    margin-top: 10px;
+}
+
+.mdl-navigation.mdl-layout--large-screen-only {
+    width: 100%;
+    margin-left: 20px;
+}
+
+
+
+#logout {
+    color:wheat;
+    margin-right: 100px;
+    margin-top:5.5px
+}
+
+#logout:hover{
+    color:white;
+}
+
+.mdl-data-table.mdl-js-data-table.mdl-data-table--selectable.mdl-shadow--2dp.customTable{
+    width: 100%;
+}
+
+#branchIndex div{
+    margin-bottom: 10px;
+
+
+}
+
+
+ody {
+    background: #000;
+    font-family: "Nunito", sans-serif;
+}
+
+.blurb h2 {
+    color: #EA1C2C;
+    font-weight: 100;
+    font-size: 2.5rem;
+}
+
+.blurb p {
+    color: #fff;
+    font-weight: 100;
+    font-size: 1.125rem;
+    line-height: 2;
+}
+
+.content {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+#mainNavbar {
+    font-size: 1.5rem;
+    font-weight: 100;
+}
+
+    #mainNavbar .nav-link {
+        color: white;
+    }
+
+.shadowed-buttons {
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 1);
+    font-weight: 300;
+}
+
+#mainNavbar .nav-link:hover {
+    color: #EA1C2C;
+}
+
+#mainNavbar .navbar-brand {
+    color: #EA1C2C;
+    font-size: 1.5rem;
+}
+
+#headingGroup span {
+    color: #EA1C2C;
+}
+
+#headingGroup h1 {
+    font-weight: 100;
+    font-size: 4rem;
+}
+
+.navbar.scrolled {
+    background: rgb(0,0,0);
+    transition: background 300ms;
+}
+
+@media (max-width: 1200px) {
+    #headingGroup h1 {
+        font-weight: 100;
+        font-size: 3rem;
+    }
+
+    .blurb h2 {
+        font-size: 2rem;
+    }
+}
+
+
+
+/*-----------------Ce am adaugat eu-------------------------*/
+
+div a.remove-underline-link {
+    text-decoration: none;
+}
+
+
+#branchHours {
+    line-height: 35px;
+}
+
+#branch-detail-jumbo {
+    margin-top: 100px;
+}
+
+    #branch-detail-jumbo .jumbotron {
+        padding-top: 16px;
+    }
+
+
+#adminButton {
+    margin-top: 150px;
+}
+
+
+.login-register-Form {
+    width: 50%;
+}

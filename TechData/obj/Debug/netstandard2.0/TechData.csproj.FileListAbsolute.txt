@@ -1,0 +1,17 @@
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\bin\Debug\netstandard2.0\TechData.deps.json
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\bin\Debug\netstandard2.0\TechData.dll
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\obj\Debug\netstandard2.0\TechData.csprojAssemblyReference.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\obj\Debug\netstandard2.0\TechData.AssemblyInfoInputs.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\obj\Debug\netstandard2.0\TechData.AssemblyInfo.cs
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\bin\Debug\netstandard2.0\TechData.pdb
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\obj\Debug\netstandard2.0\TechData.csproj.CoreCompileInputs.cache
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\obj\Debug\netstandard2.0\TechData.dll
+D:\Anul 4-IS-semestrul 2\Licenta\Copie_Wes\TechData\obj\Debug\netstandard2.0\TechData.pdb
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Debug\netstandard2.0\TechData.deps.json
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Debug\netstandard2.0\TechData.dll
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\bin\Debug\netstandard2.0\TechData.pdb
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.0\TechData.csprojAssemblyReference.cache
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.0\TechData.AssemblyInfoInputs.cache
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.0\TechData.AssemblyInfo.cs
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.0\TechData.dll
+d:\Anul 4-IS-semestrul 2\Licenta\Aplicatie_fara_sistem_auth\TechData\obj\Debug\netstandard2.0\TechData.pdb

@@ -1,0 +1,40 @@
+﻿@model BiblioTECH.Models.Branch.EditBranchModel
+@{
+    ViewBag.Title = "Edit Branch";
+}
+
+<div class="container container-margin-adjustment">
+    <div class="jumbotron">
+        <form enctype="multipart/form-data" asp-controller="Branch" asp-action="PlaceEdit" method="post">
+            <div class="row">
+
+                @Html.HiddenFor(a => a.BranchId)
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <input asp-for="Name" class="form-control" placeholder="@Model.Name">
+                </div>
+                <div class="form-group col-md-4">
+                    <input asp-for="Address" class="form-control" placeholder="@Model.Address">
+                </div>
+                <div class="form-group col-md-4">
+                    <input asp-for="Telephone" class="form-control" placeholder="@Model.Telephone">
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(a => a.Image)
+                <input asp-for="Image" class="form-control-file" />
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-12">
+                    <textarea asp-for="Description" placeholder="@Model.Description"></textarea>
+                </div>
+            </div>
+            <div>
+                <button type="submit" class="btn btn-success btn-lg">Actualizați informațiile</button>
+            </div>
+        </form>
+    </div>
+</div>
+

@@ -1,0 +1,34 @@
+﻿
+@model BiblioTECH.Models.Patron.PatronIndexModel
+@{
+    ViewBag.Title = "Patron Index";
+}
+
+<div class="container-fluid bg-light container-margin-adjustment">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Link profil</th>
+                <th>Nume</th>
+                <th>Prenume</th>
+                <th>Id Card Virtual</th>
+                <th>Taxe de achitat</th>
+                <th>Locație card</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var patron in Model.Patrons)
+            {
+                <tr>
+                    <td id="patronIcon"><a asp-controller="Patron" asp-action="Detail" asp-route-id="@patron.Id"><i class="fa fa-user fa-2x"></i></a></td>
+                    <td>@patron.LastName</td>
+                    <td>@patron.FirstName</td>
+                    <td>@patron.LibraryCardId</td>
+                    <td>@patron.OverdueFees</td>
+                    <td>@patron.HomeLibrary</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

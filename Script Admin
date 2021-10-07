@@ -1,0 +1,206 @@
+INSERT INTO Statuses 
+([Name], [Description]) VALUES
+('Împrumutat', 'Obiectul este îmrpumutat'),
+('Valabil', 'Obiectul este valabil pentru împrumut'),
+('Pierdut', 'Obiectul este pierdut'),
+('Rezervat', 'Obiectul este de asemenea și rezervat')
+SELECT * FROM Statuses
+
+
+IUSE [BiblioTECH]
+GO
+
+INSERT INTO [dbo].[LibraryBranches]
+           ([Name]
+           ,[Address]
+           ,[Telephone]
+           ,[Description]
+           ,[OpenDate]
+           ,[ImageUrl])
+     VALUES
+           ('Biblioteca centrală universitară “Carol I"'
+           ,'Strada Boteanu 1, București 010027'
+           , '021 313 1606'
+           ,' Totul începe în anul 1895 când regele Carol I înființează Fundația Universitară sub același nume care apoi, după extinderea ce începe în 1911 și durează 3 ani, sediul nou construit și dat în uz academic va purta titlul de bibliotecă destinată spre “binele tinerimii universitare de la toate facultăţile din ţară,”. – Carol I în scrisoarea adresată președintelui consiliului de miniștri.'
+           , '1985-03-14'
+           ,'/imges/Branches/Carol1.jpg'),
+		   ('Biblioteca Centrală a Universității Politehnica Timișoara'
+		   ,'Bulevardul Vasile Pârvan 2, Timișoara'
+		   , '0256 404 744'
+		   ,' Așa cum îi spune și numele, aceasta este biblioteca ce aparține universității “Politehnica” Timișoara. Este un adevărat locaș pentru atât studenții ce aparțin de universitate, cât și pentru cei ce nu aparțin. Actualul sediu aflat pe bulevardul Vasile Pârvan a fost oficializat în anul 2014, eveniment oficiat în cel de-al 94-lea ani de continuitate ai Politehncii. '
+		   , '2014-05-13'
+		   ,'/images/Branches/Upt.jpg'
+		   ),
+		   ('Biblioteca universității din Craiova'
+		   ,'Strada Alexandru Ioan Cuza 13, Craiova 200585'
+		   ,'0251 418 844'
+		   ,' Biblioteca actuală, localizată în apropierea universității din Craiova, a fost înființată în anul 1966. Aceasta a rezultat prin unirea a două mici biblioteci, cea cu numele de “Tudor Vladimirescu”, aflată sub institutul Agronomic și cea a institutului Pedagogic, rezultând astfel o singură bibliotecă. '
+		   ,'1966-03-14'
+		   ,'images/Branches/Craiova.jpg'
+
+		   ),
+		   ('Biblioteca Centrală Universitară Mihai Eminescu Iași'
+		   ,'Strada Păcurari nr. 4, Iași 700511'
+		   ,'0232 264 245'
+		   ,'Deținând cărți și manuscrise ce datează încă din anii 1640, mai demult aparținute de către Academia Vasiliană, biblioteca universitară “Mihai Eminescu” din Iași își are începuturile încă din 1835, unde pe atunci se poziționa în clădirea academiei Mihăilene, urmând ca apoi, în 1897 să fie mutată, locul final fiind clădirea “Fundația Universitară Ferdinand I”.'
+		   ,'1897-01-30'
+		   ,'/images/Branches/Iasi.jpg'
+		   )
+GO
+
+
+
+USE [BiblioTECH]
+GO
+
+INSERT INTO [dbo].[LibraryAssets]
+           ([Title]
+           ,[Year]
+           ,[StatusId]
+           ,[Cost]
+           ,[ImageUrl]
+           ,[LocationId]
+           ,[Discriminator]
+           ,[ISBN]
+           ,[Author]
+           ,[DeweyIndex])
+     VALUES
+           ('Back to the Batcave'
+           ,1994
+           ,1007
+           ,55
+           ,'/images/Assets/BatCave.jpg'
+           ,2
+           ,'Book'
+           ,'3242231232'
+           ,'Adam West && Jeff Rovin'
+           ,'811.111'
+           ),
+		   (
+		   'Struck by Lightning'
+		   ,2005
+		   ,1007
+		   ,44
+		   ,'/images/Assets/Struck by Lightning.jpg'
+		   ,3
+		   ,'Book'
+           ,'9241234132'
+           ,'Jeffrey S. Rosenthal'
+           ,'164.111'
+		   ),
+		   (
+		   'The Green Mile'
+		   ,1997
+		   ,1007
+		   ,60
+		   ,'/images/Assets/The Green Mile.jpg'
+		   ,3
+		   ,'Book'
+		   ,'55654231444'
+		   ,'Stephen King'
+		   ,'342.544'
+		   ),
+		   (
+		   'The Gunslinger'
+		   ,1968
+		   ,1007
+		   ,45
+		   ,'images/Assets/The Gunslinger.jpg'
+		   ,5
+		   ,'Book'
+		   ,'86435321231'
+		   ,'Cory Levine'
+		   ,'111.232'
+		   )
+GO
+
+
+
+
+INSERT INTO 
+AspNetRoles(Id, [Address], [Name], Telephone, OpenDate, [Description]) 
+VALUES 
+
+
+INSERT INTO [dbo].[AspNetRoles]
+           ([Id]
+           ,[Name]
+           ,[NormalizedName]
+           ,[ConcurrencyStamp])
+     VALUES
+           ( '342434aqdsa42342342343'
+           ,'User'
+           ,'USER'
+           ,'sdfdsfdsfdfdfds')	   
+		  
+INSERT INTO [dbo].[AspNetRoles]
+           ([Id]
+           ,[Name]
+           ,[NormalizedName]
+           ,[ConcurrencyStamp])
+     VALUES
+           ( '905a3d22-b7c1-4721-974a-335a0d802061'
+           ,'Admin'
+           ,'ADMIN'
+           ,'21312312adsaddw')
+SELECT * FROM AspNetRoles
+
+
+
+INSERT INTO [dbo].[AspNetUsers]
+           ([Id]
+           ,[UserName]
+           ,[NormalizedUserName]
+           ,[Email]
+           ,[NormalizedEmail]
+           ,[EmailConfirmed]
+           ,[PasswordHash]
+           ,[SecurityStamp]
+           ,[ConcurrencyStamp]
+           ,[PhoneNumber]
+           ,[PhoneNumberConfirmed]
+           ,[TwoFactorEnabled]
+           ,[LockoutEnd]
+           ,[LockoutEnabled]
+           ,[AccessFailedCount]
+           ,[FirstName]
+           ,[LastName]
+           ,[Address]
+           ,[DateOfBirth]
+           ,[Telephone]
+           ,[Gender]
+           ,[HomeBranch])
+     VALUES
+           ('9484d97f-83cb-423f-b14e-0e9f299ceaa0'	
+		   ,'sebastanopol@gmail.com'
+		   ,'SEBASTANOPOL@GMAIL.COM'
+		   ,'sebastanopol@gmail.com'
+		   ,'SEBASTANOPOL@GMAIL.COM'
+		   ,0	
+		   ,'AQAAAAEAACcQAAAAEMa3gHj3vwOntsCyM5roY2v3cUkrZz1AhM8/2hxAthtfSDK/NLwjgR4yfPhqIBc+Hw=='
+		   ,'XXWCTGKGMQX26QVEP2TKCR4FJIADBCKP'
+		   ,'876cf637-0050-4c50-8234-acd78b2d5e48'
+		   ,NULL
+		   ,0
+		   ,0
+		   ,NULL
+		   ,1
+		   ,0
+		   ,'admin'
+		   ,'admin'
+		   ,'admin'
+		   ,'2020-06-15 00:01:00.0000000'	
+		   ,'00000'
+		   ,'Masculin'
+		   ,1)
+SELECT * FROM AspNetUsers
+
+INSERT INTO [dbo].[AspNetUserRoles]
+           ([UserId]
+           ,[RoleId])
+     VALUES
+           ('9484d97f-83cb-423f-b14e-0e9f299ceaa0'
+           ,'905a3d22-b7c1-4721-974a-335a0d802061')
+		   
+
+SELECT * FROM AspNetUserRoles

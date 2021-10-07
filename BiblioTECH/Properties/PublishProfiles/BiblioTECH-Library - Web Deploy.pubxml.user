@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA/oOyOwJQ1U2du5uVsjf0nAAAAAACAAAAAAAQZgAAAAEAACAAAABM2tYu8JDPLEOxPAdPojRlr/mchV7rsCbZ/VOCZQam+QAAAAAOgAAAAAIAACAAAAC7eIwGY3lRBcJPRibYd5LB28R2zLKLBlyH8SUfCBaU+IAAAAA4n97QMlm9Ft7d1X3UmqLs/SXb913jv5GiaeUuGutI8vNnvOWydpJLvjiAtvZDfNQx6mL4dWDv0p3PL+Y5PyzxpAHQBF9UKDTAJ3FbpjHld3EgiDov/xyA4ECoR79uqzVGNkapWEhmiYJE/XMNC/ns0otFdhrVJ/3fTp91F4gxAEAAAAAcVwdnzs3ftr0IEBxBlS/dvaeGOVxEk843ZpiUcpMhOCFCFluXVIvjyzEJDE3M8Pw6R3JydpkGadiW7u4LVidD</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <DestinationConnectionStrings Include="LibraryConnection">
+      <Value>Server=tcp:bibliotech-server.database.windows.net,1433%3bInitial Catalog=BilioTECH-Database%3bPersist Security Info=False%3bUser ID=sebastanopol%3bPassword={your_password}%3bMultipleActiveResultSets=False%3bEncrypt=True%3bTrustServerCertificate=False%3bConnection Timeout=30%3b</Value>
+    </DestinationConnectionStrings>
+  </ItemGroup>
+</Project>

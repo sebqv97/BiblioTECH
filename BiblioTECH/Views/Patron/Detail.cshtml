@@ -1,0 +1,85 @@
+﻿
+@using BiblioTECH.Models.Patron
+@model BiblioTECH.Models.Patron.PatronDetailModel
+@{
+    ViewBag.Title = @Model.LastName + ", " + @Model.FirstName;
+}
+
+
+<div class="container container-margin-adjustment">
+    <div class="jumbotron">
+        <div class="row">
+            <div class="col-md-4">
+                <div>
+                    <h2>@Model.FirstName @Model.LastName</h2>
+                    <div class="patronContact">
+                        <div id="patronEmail">Email: @Model.Email</div>
+                        <div id="patronTel">ID Card Virtual: @Model.LibraryCardId</div>
+                        <div id="patronAddress">Adresă: @Model.Address</div>
+                        <div id="patronTel">Telefon: @Model.Telephone</div>
+                        <div id="patronDate">Înscris din: @Model.MemberSince</div>
+                        <div id="patronLibrary">Locație Card: @Model.HomeLibrary</div>
+                        @if (@Model.OverdueFees > 0)
+                        {
+                            <div id="patronHasFees">Taxe de achitat: @Model.OverdueFees Lei</div>
+                        }
+                        else
+                        {
+                            <div id="patronNoFees">Nici o taxă MOMENTAN</div>
+
+                        }
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <h4>Obiecte momentan împrumutate:</h4>
+                @if (@Model.AssetsCheckedOut.Any())
+                {
+                    <div id="patronAssets">
+                        <ul>
+                            @foreach (var checkout in @Model.AssetsCheckedOut)
+                            {
+                                <li>
+                                    @checkout.LibraryAsset.Title - (Library Asset ID: @checkout.LibraryAsset.Id)
+                                    <ul>
+                                        <li>
+                                            Din: @checkout.Since
+                                        </li>
+                                        <li>
+                                            Până: @checkout.Until
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div>Niciun obiect împrumutat</div>
+
+                }
+            </div>
+
+            <div class="col-md-4">
+                <h4>Obiecte momentan rezervate</h4>
+                @if (@Model.Holds.Any())
+                {
+                    <div id="patronHolds">
+                        <ul>
+                            @foreach (var hold in @Model.Holds)
+                            {
+                                <li>@hold.LibraryAsset.Title - Din @hold.HoldPlaced.ToString("yy-dd-MM - HH:mm")</li>
+                            }
+                        </ul>
+                    </div>
+                }
+                else
+                {
+                    <div>Niciun obiect rezervat</div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+

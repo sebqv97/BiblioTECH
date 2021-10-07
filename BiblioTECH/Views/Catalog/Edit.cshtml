@@ -1,0 +1,73 @@
+﻿
+@using BiblioTECH.Models.Catalog
+@model BiblioTECH.Models.Catalog.EditLibraryAssetModel
+@{
+    ViewBag.Title = @Model.Title;
+}
+
+<div class="container container-margin-adjustment">
+    <div class="jumbotron ">
+        <form enctype="multipart/form-data" asp-controller="Catalog" asp-action="Edit" method="post">
+            <div class="form-row">
+                @Html.HiddenFor(a => a.Type)
+                @Html.HiddenFor(a => a.AssetId)
+                <div class="form-group col-md-12">
+                    @Html.LabelFor(a => a.CurrentLocation)
+                    <select asp-for="CurrentLocation.Name" asp-items="@((List<SelectListItem>)ViewData["BranchesNames"])">
+                        <option value="@Model.CurrentLocation.Id" selected>@Model.CurrentLocation.Name</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+
+                    <label asp-for="Title"></label>
+                    <input asp-for="Title" class="form-control" placeholder="@Model.Title">
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Year"></label>
+                    <input asp-for="Year" class="form-control" placeholder="@Model.Year">
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Cost"></label>
+                    <input asp-for="Cost" class="form-control" placeholder="@Model.Cost">
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(a => a.Image)
+                <input asp-for="Image" class="form-control-file" />
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label asp-for="Isbn"></label>
+                    <input asp-for="Isbn" class="form-control" placeholder="@Model.Isbn">
+                </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="AuthorOrDirector"></label>
+                    <input asp-for="AuthorOrDirector" class="form-control" placeholder="@Model.AuthorOrDirector">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+
+
+                </div>
+                <div class="form-group col-md-4">
+                    <label asp-for="Dewey"></label>
+                    <input asp-for="Dewey" class="form-control" placeholder="@Model.Dewey">
+
+                </div>
+                <div class="form-group col-md-4">
+
+
+                </div>
+            </div>
+
+            <div>
+                <button type="submit" class="btn btn-success btn-lg">Edit Item</button>
+            </div>
+        </form>
+    </div>
+</div>
+

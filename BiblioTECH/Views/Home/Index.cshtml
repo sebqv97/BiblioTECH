@@ -1,0 +1,99 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using TechData.Models
+@inject SignInManager<ApplicationUser> SignInManager
+
+@{
+    ViewData["Title"] = "Home";
+}
+
+
+
+<section class="container-fluid px-0">
+    <div class="row align-items-center">
+        <div class="col-lg-6">
+            <div id="headingGroup" class="text-white text-center d-none d-lg-block mt-5">
+                <h1 class="">BIBLIOTECA<span>/</span>TA<span>/</span>AICI</h1>
+                <h1 class="">BIBLIOTECA<span>/</span>TA<span>/</span>AICI</h1>
+                <h1 class="">BIBLIOTECA<span>/</span>TA<span>/</span>AICI</h1>
+                <h1 class="">BIBLIOTECA<span>/</span>TA<span>/</span>AICI</h1>
+                <h1 class="">BIBLIOTECA<span>/</span>TA<span>/</span>AICI</h1>
+                <h1 class="">BIBLIOTECA<span>/</span>TA<span>/</span>AICI</h1>
+                <h1 class="">BIBLIOTECA<span>/</span>TA<span>/</span>AICI</h1>
+
+            </div>
+        </div>
+        <div class="col-lg-6">
+            <img class="img-fluid" src="~/images/homeCataloguePhoto.jpg" alt="">
+        </div>
+    </div>
+</section>
+
+<section class="container-fluid px-0">
+    <div class="row align-items-center content">
+        <div class="col-md-6 order-2 order-md-1">
+            <img src="~/images/homeBranchPhoto.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-6 text-center order-1 order-md-2">
+            <div class="row justify-content-center">
+                <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                    <h2>BIBLIOTECH</h2>
+                    <img src="" alt="" class="d-none d-lg-inline">
+                    <p class="lead">
+                        Un simplu loc in care linistea si pacea, oferita prin recreerea in carti si vizionarea celor mai apreciate filme, devine realitate.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row align-items-center content">
+        <div class="col-md-6 order-1 order-md-2">
+            <img src="~/images/homePatronPhoto.jpg" alt="" class="img-fluid">
+        </div>
+        <div class="col-md-6 text-center order-2 order-md-1">
+            <div class="row justify-content-center">
+                <div class="col-10 col-lg-8 blurb mb-5 mb-md-0">
+                    <h2>UTILIZATORI</h2>
+                    <img src="imgs/lolli_icon.png" alt="" class="d-none d-lg-inline">
+                    @if (!SignInManager.IsSignedIn(User))
+                    {
+                        <a class="nav-item nav-link" asp-controller="Account" asp-action="register">
+
+
+                            <p class="lead">
+                                Fii parte din comunitate. Este simplu...
+                            <p>
+                                Tot ce trebuie sa faci tu este sa ma apesi si sa urmezi instructiunile. Un card ti se va elibera cu numele tau si vei putea imprumuta, chiar si rezerva, unul sau mai multe obiecte
+                                din multitudinea noastra de <span>CARTI</span> si <span>FILME</span>...
+                            </p>
+                            <p>
+                                PREGATIT?
+                            </p>
+
+                        </a>
+                    }
+                    else
+                    {
+                        <a class="nav-item nav-link" asp-controller="Catalog" asp-action="Index">
+
+
+                            <p class="lead">
+                                Fii parte din comunitate. Este simplu...
+                            <p>
+                                Tot ce trebuie sa faci tu este sa ma apesi si sa urmezi instructiunile. Un card ti se va elibera cu numele tau si vei putea imprumuta, chiar si rezerva, unul sau mai multe obiecte
+                                din multitudinea noastra de <span>CARTI</span> si <span>FILME</span>...
+                            </p>
+                            <p>
+                                PREGATIT?
+                            </p>
+
+                        </a>
+                    }
+
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
